@@ -7,3 +7,9 @@
     height: 400px;
   }
 }
+
+.center, .brand.center {
+  text-align: center;
+  float: none;
+  clear: both;
+}
