@@ -1,0 +1,17 @@
+<section class="section alt" id="promo">
+	<div class="map-top-shadow"></div>
+	<google-map
+    center="center" 
+    draggable="true" 
+    zoom="zoom" 
+    markers="markers" 
+    mark-click="false" 
+    style="height: 400px">
+  </google-map>
+	<div class="map-bottom-shadow"></div>
+</section>
+<button ng-click="testFunc()">Test</button>
+<div>{{test}}</div>
+<input type="number" ng-model="center.lat">
+<input type="number" ng-model="center.lng">
+<input type="number" ng-model="zoom">

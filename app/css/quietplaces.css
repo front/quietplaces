@@ -1,0 +1,16 @@
+#map {
+  height: 800px;
+}
+
+@media (max-width: 700px) {
+  #map {
+    height: 240px;
+  }
+}
+
+.center, .brand.center {
+  text-align: center;
+  float: none;
+  clear: both;
+  margin-left: 0;
+}
