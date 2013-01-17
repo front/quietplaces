@@ -188,6 +188,18 @@
 				if (url) {
 					
 				}
+
+/*
+				var infowindow = new google.maps.InfoWindow({
+				    content: '<img src="https://www.google.com/intl/pt-PT_ALL/images/logos/images_logo_lg.gif"/>'
+				  });
+
+			  google.maps.event.addListener(marker, 'click', function() {
+			    infowindow.open(_instance, marker);
+			  });
+*/
+
+				//makeInfoWindowEvent(_instance, infowindow, marker);
 				
 				// Cache marker 
 				_markers.unshift(marker);

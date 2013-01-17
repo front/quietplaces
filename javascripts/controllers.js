@@ -6,11 +6,6 @@ function PlacesCtrl($scope, $timeout, Place) {
   	if ($scope.search) {
       $scope.places = Place.query(function(){
         console.log($scope.places[0]);
-        $scope.center = {
-          lat: 10,
-          lng: -64
-        }
-        $scope.zoom = 8;
       });
   	}
   }
@@ -26,11 +21,19 @@ function PlacesCtrl($scope, $timeout, Place) {
               label: place.description,
               url: '',
               thumbnail: '',
-              handler: function(){alert('Should be a nice popup with the following description: ' + place.description);}
+              handler: function(){
+                $scope.showPlace(place);
+              }
             });
         }, $scope.markers);
       }, 0);
     });
+  }
+
+  $scope.showPlace = function(place) {
+    $scope.place = place;
+    $scope.$apply();
+    $('#placeModal').modal();
   }
 
   $scope.findMe = function () {
@@ -42,7 +45,7 @@ function PlacesCtrl($scope, $timeout, Place) {
             lng: position.coords.longitude
           };
 
-          $scope.zoom = 12;
+          $scope.zoom = 16;
 
           $scope.$apply();
         },
@@ -61,6 +64,14 @@ function PlacesCtrl($scope, $timeout, Place) {
   $scope.geolocationAvailable = navigator.geolocation ? true : false;
   $scope.zoom = 4;
   $scope.markers = [];
+
+  $scope.quietness = [
+    'You\'ll need earplugs!',
+    'Not so quiet. Some disturbing noises.',
+    'It\'s quiet but occasional noise can be heard.',
+    'Very quiet.',
+    'You can hear your own heartbeat.'
+  ];
 
   //load all places
   $scope.loadPlaces();

@@ -3,7 +3,7 @@
   <head>
   <meta charset="utf-8" />
   <!-- %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"} -->
-  <title></title>
+  <title>Quiet Places</title>
   <meta content="Bootsrap based theme" name="description" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <!--[if lt IE 9]>
@@ -71,6 +71,27 @@
       </section>
     -->
     </div>
+
+    <!-- Place Modal -->
+    <div id="placeModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">{{place.address}}</h3>
+      </div>
+      <div class="modal-body">
+        <img src="{{place.images.url}}" alt="{{place.description}}"/>
+        <p>{{place.description}}</p>
+      </div>
+      <div class="modal-footer">
+        <span>Quietness </span>
+        <ul class="quietness">
+          <li ng-repeat="n in [] | range:place.quietness">
+            <i class="icon-star"></i>
+          </li>
+        </ul>
+        <div><small>{{quietness[place.quietness-1]}}</small></div>
+      </div>
+    </div>    
     <!-- Page Footer -->
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular/angular-resource.min.js"></script>
@@ -85,11 +106,5 @@
     <script src="javascripts/script.js" type="text/javascript"></script>
     <script src="javascripts/angular-google-maps.js" type="text/javascript"></script>
     <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-    <script type="text/javascript">
-      //<![CDATA[
-        // Call the google map
-        //mapInit();
-      //]]>
-    </script>
 </body>
 </html>

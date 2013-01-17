@@ -14,3 +14,21 @@
   clear: both;
   margin-left: 0;
 }
+
+.navbar-inner {
+  background-color: white;
+}
+
+ul.quietness {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  display: inline;
+}
+
+ul.quietness li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  display: inline;
+}

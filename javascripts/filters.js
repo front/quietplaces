@@ -8,3 +8,14 @@ angular.module('quietPlaces.filters', []).
       return String(text).replace(/\%VERSION\%/mg, version);
     }
   }]);
+
+angular.module('quietPlaces.filters', []).
+  filter('range', function() {
+    return function(input, total) {
+      total = parseInt(total);
+      for (var i=0; i<total; i++) {
+        input.push(i);
+      }
+      return input;
+    };
+  });
